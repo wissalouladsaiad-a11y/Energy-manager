@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fiche Bâtiment — ENEOR Energy Management</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">ENEOR <span class="logo-sub">Energy Management</span></span>
+      </div>
+      <nav class="tab-nav">
+        <button class="tab-btn active" data-tab="identite">🏢 Identité</button>
+        <button class="tab-btn" data-tab="equipements">🔧 Équipements</button>
+        <button class="tab-btn" data-tab="actions">📋 Plan d'Action</button>
+      </nav>
+      <div class="header-status">
+        <span class="status-dot"></span>
+        <span id="last-update">Chargement...</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="hero-banner">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Fiche Bâtiment</div>
+      <h1 class="hero-title" id="hero-nom">—</h1>
+      <p class="hero-subtitle" id="hero-adresse">—</p>
+      <div class="hero-kpis" id="hero-kpis">
+        <div class="kpi-card">
+          <div class="kpi-value" id="kpi-surface">—</div>
+          <div class="kpi-label">Surface (m²)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value" id="kpi-annee">—</div>
+          <div class="kpi-label">Année construction</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value" id="kpi-zone">—</div>
+          <div class="kpi-label">Zone climatique</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-value" id="kpi-actions">—</div>
+          <div class="kpi-label">Actions en cours</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- TAB: IDENTITÉ -->
+    <section class="tab-panel active" id="tab-identite">
+      <div class="section-grid">
+
+        <div class="card card-full">
+          <div class="card-header">
+            <h2 class="card-title">🏢 Informations Générales</h2>
+          </div>
+          <div class="info-grid" id="info-generale">
+            <div class="info-skeleton"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">⚡ Contrats Énergie</h2>
+          </div>
+          <div class="contrats-list" id="contrats-energie">
+            <div class="info-skeleton"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">🏛️ Réglementation</h2>
+          </div>
+          <div class="info-grid" id="info-reglementation">
+            <div class="info-skeleton"></div>
+          </div>
+        </div>
+
+        <div class="card card-full">
+          <div class="card-header">
+            <h2 class="card-title">🕐 Horaires d'Occupation</h2>
+          </div>
+          <div class="horaires-grid" id="horaires-occupation">
+            <div class="info-skeleton"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB: ÉQUIPEMENTS -->
+    <section class="tab-panel" id="tab-equipements">
+      <div class="section-grid">
+        <div class="card card-full">
+          <div class="card-header">
+            <h2 class="card-title">🔧 Inventaire des Équipements</h2>
+            <div class="filter-bar">
+              <input type="text" id="filter-equipements" placeholder="Filtrer les équipements..." class="filter-input"/>
+            </div>
+          </div>
+          <div id="equipements-container">
+            <div class="info-skeleton"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB: PLAN D'ACTION -->
+    <section class="tab-panel" id="tab-actions">
+      <div class="section-grid">
+        <div class="card card-full">
+          <div class="card-header">
+            <h2 class="card-title">📋 Plan d'Action</h2>
+            <div class="filter-bar">
+              <select id="filter-statut" class="filter-select">
+                <option value="">Tous les statuts</option>
+                <option value="En cours">En cours</option>
+                <option value="Terminé">Terminé</option>
+                <option value="En attente">En attente</option>
+              </select>
+              <select id="filter-priorite" class="filter-select">
+                <option value="">Toutes priorités</option>
+                <option value="1">Priorité 1</option>
+                <option value="2">Priorité 2</option>
+                <option value="3">Priorité 3</option>
+              </select>
+            </div>
+          </div>
+          <div id="actions-container">
+            <div class="info-skeleton"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© ENEOR Energy Management — Données synchronisées depuis Google Sheets</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
